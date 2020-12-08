@@ -28,6 +28,12 @@ app.use(cors())
 app.use(express.json())
 
 //setup routes
+app.get('/', (req, res) => {
+  res.status(200).json({
+    ok: true,
+    message: 'Welcome to NoRona Shop'
+  })
+})
 app.use('/users', userRouter)
 app.use('/orders', orderRouter)
 
